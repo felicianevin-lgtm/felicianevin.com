@@ -1,0 +1,105 @@
+{
+  "date": "2026-09-17",
+  "issue_no": 1,
+  "status": "draft",
+  "newsletter_name": "Weekly market email",
+  "subject": "Rates jumped this week. Here's what local homes did.",
+  "preheader": "Mortgage rates rose to 6.95%, the Fed raised its rate, and August home prices held steady in Sacramento, Placer, and El Dorado counties.",
+  "headline": "Rates jumped. Local prices held steady.",
+  "intro": [
+    "The average 30-year mortgage rate rose to 6.95% this week, one day after the Federal Reserve raised its own rate.",
+    "Here at home, August prices barely moved from a year ago in all three counties, and homes took about a month to sell.",
+    "Below is what each number means in plain language, and where to read more."
+  ],
+  "rates": {
+    "survey_date": "2026-09-17",
+    "rate30": 6.95, "rate30_prev": 6.76, "rate30_year": 6.26,
+    "rate15": 6.26, "rate15_prev": 6.09, "rate15_year": 5.41,
+    "source_url": "https://www.freddiemac.com/pmms",
+    "verified_on": "2026-09-17",
+    "meaning": "A higher rate means a higher monthly payment on the same loan. On a $400,000 loan, the move from 6.76% to 6.95% adds about $50 a month (principal and interest only). Your own rate depends on your credit, down payment, and loan type."
+  },
+  "local": {
+    "period": "August 2026",
+    "placeholder": false,
+    "source_url": "https://www.car.org/en/aboutus/mediacenter/newsreleases/2026releases/august2026sales",
+    "verified_on": "2026-09-17",
+    "attribution": "Local numbers: CALIFORNIA ASSOCIATION OF REALTORS® August 2026 home sales and price report, published September 16, 2026. Existing single-family homes, August 1 to 31, 2026, compared with July 2026 and August 2025. Deemed reliable but not guaranteed.",
+    "counties": [
+      {
+        "name": "Sacramento County",
+        "takeaway": "Prices are almost exactly where they were a year ago. Homes are selling a few days faster than last August.",
+        "metrics": {
+          "median_price": {"value": 549000, "prev_month": 540000, "prev_year": 550000},
+          "new_listings": {"value": null},
+          "pendings": {"value": null},
+          "days_on_market": {"value": 25, "prev_month": 24.5, "prev_year": 28},
+          "months_inventory": {"value": 3.2, "prev_month": 3.1, "prev_year": 3.2},
+          "sale_to_list": {"value": null}
+        }
+      },
+      {
+        "name": "Placer County",
+        "takeaway": "Prices are up a little from last year. There are more homes to choose from than in July, and they are taking about a month to sell.",
+        "metrics": {
+          "median_price": {"value": 692500, "prev_month": 689000, "prev_year": 675000},
+          "new_listings": {"value": null},
+          "pendings": {"value": null},
+          "days_on_market": {"value": 32, "prev_month": 29, "prev_year": 34.5},
+          "months_inventory": {"value": 3.6, "prev_month": 3.0, "prev_year": 3.9},
+          "sale_to_list": {"value": null}
+        }
+      },
+      {
+        "name": "El Dorado County",
+        "takeaway": "The median dropped from July, but it is still above last August. Fewer homes sell here each month, so one month can swing the number a lot. Buyers have the most choices of the three counties.",
+        "metrics": {
+          "median_price": {"value": 690000, "prev_month": 735000, "prev_year": 679500, "meaning": "Half sold for more, half for less. A smaller county, so the monthly number jumps around more."},
+          "new_listings": {"value": null},
+          "pendings": {"value": null},
+          "days_on_market": {"value": 34, "prev_month": 32, "prev_year": 33.5},
+          "months_inventory": {"value": 4.9, "prev_month": 4.1, "prev_year": 4.9},
+          "sale_to_list": {"value": null}
+        }
+      }
+    ]
+  },
+  "links": [
+    {
+      "source": "Federal Reserve",
+      "title": "The Fed raised its interest rate by a quarter point",
+      "url": "https://www.federalreserve.gov/newsevents/pressreleases/monetary20260916a.htm",
+      "published": "2026-09-16",
+      "verified_on": "2026-09-17",
+      "take": "The Fed moved its target range up to 3.75% to 4%. The Fed does not set mortgage rates. But its moves change what it costs banks to borrow, and mortgage rates often react."
+    },
+    {
+      "source": "CALIFORNIA ASSOCIATION OF REALTORS®",
+      "title": "California home sales and prices for August",
+      "url": "https://www.car.org/en/aboutus/mediacenter/newsreleases/2026releases/august2026sales",
+      "published": "2026-09-16",
+      "verified_on": "2026-09-17",
+      "take": "Statewide, the median price was $901,420, almost flat from a year ago, and the typical home sold in 28 days. Their page has a county table near the bottom, so you can see how our three counties compare with the rest of the state."
+    },
+    {
+      "source": "National Association of REALTORS®",
+      "title": "U.S. home sales dipped 2% in August",
+      "url": "https://www.nar.realtor/newsroom/nar-existing-home-sales-report-shows-2-0-decrease-in-august",
+      "published": "2026-09-10",
+      "verified_on": "2026-09-17",
+      "take": "Across the country, sales slowed a little and the median price was $429,100. There were 4.9 months of homes for sale, up from 4.6 a year ago, so buyers nationwide have a bit more to pick from."
+    }
+  ],
+  "tip": {
+    "title": "Pre-approved is not the same as pre-qualified",
+    "text": "Pre-qualified means a lender took a quick look at what you told them. Pre-approved means they checked your pay stubs, credit, and bank statements. When rates are moving, a real pre-approval tells you what payment you can count on before you fall for a house.",
+    "url": "/resources/#buying",
+    "link_text": "See the buying guide, step 1"
+  },
+  "cta": {
+    "text": "Have a question about your own home or your own move? Hit reply, or send me a note. It comes straight to me.",
+    "text_web": "Have a question about your own home or your own move? Send me a note. It comes straight to me.",
+    "button": "Ask Felicia a question",
+    "url": "/?intent=Other#start"
+  }
+}

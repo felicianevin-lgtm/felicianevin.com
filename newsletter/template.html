@@ -1,0 +1,200 @@
+<!doctype html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="x-apple-disable-message-reformatting">
+<meta name="color-scheme" content="light dark">
+<meta name="supported-color-schemes" content="light dark">
+<title>{{subject}}</title>
+<!--
+  Felicia Nevin weekly market email. Sierra brand: pine #10241D, sand #EDE6D6, copper #D98B4A.
+  Email-safe: tables + inline CSS, 600px, no JavaScript, no background images.
+  Filled by newsletter/build_issue.py. {{name}} = value, <!--[name]--> ... <!--[/name]--> = repeated block.
+  {unsubscribe_url} (single braces) is the BoldTrail merge tag. Leave it exactly as is.
+  Dark mode: every text color sits on its own solid background cell, so clients that
+  invert colors keep the contrast. Header, rate card and footer are already dark.
+-->
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@700;800&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+  body{margin:0;padding:0;background:#EDE6D6;}
+  table{border-collapse:collapse;}
+  img{border:0;display:block;}
+  a{color:#9C5518;}
+  @media only screen and (max-width:620px){
+    .shell{width:100%!important;}
+    .pad{padding-left:20px!important;padding-right:20px!important;}
+    .col{display:block!important;width:100%!important;padding-left:0!important;padding-right:0!important;}
+    .h1{font-size:30px!important;line-height:34px!important;}
+    .big{font-size:44px!important;line-height:46px!important;}
+    .hide-sm{display:none!important;}
+  }
+</style>
+</head>
+<body style="margin:0;padding:0;background:#EDE6D6;">
+<div style="display:none;max-height:0;overflow:hidden;opacity:0;color:#EDE6D6;font-size:1px;line-height:1px;">{{preheader}}</div>
+
+<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" bgcolor="#EDE6D6" style="background:#EDE6D6;">
+<tr><td align="center" style="padding:24px 12px;">
+
+<table role="presentation" class="shell" width="600" cellpadding="0" cellspacing="0" border="0" style="width:600px;max-width:600px;">
+
+  <!-- ============ HEADER ============ -->
+  <tr><td class="pad" bgcolor="#10241D" style="background:#10241D;padding:26px 36px;border-radius:18px 18px 0 0;">
+    <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0"><tr>
+      <td style="font-family:'Bricolage Grotesque','DM Sans',Arial,Helvetica,sans-serif;font-weight:800;font-size:22px;line-height:24px;color:#EDE6D6;letter-spacing:-0.4px;">
+        Felicia Nevin
+        <div style="font-family:'DM Sans',Arial,Helvetica,sans-serif;font-weight:500;font-size:10px;line-height:16px;letter-spacing:2px;text-transform:uppercase;color:#D98B4A;">California real estate</div>
+      </td>
+      <td align="right" style="font-family:'DM Sans',Arial,Helvetica,sans-serif;font-size:12px;line-height:18px;color:#C9C8B8;">
+        {{newsletter_name}}<br>{{date_long}}
+      </td>
+    </tr></table>
+  </td></tr>
+
+  <!-- ============ THIS WEEK ============ -->
+  <tr><td class="pad" bgcolor="#F6F1E6" style="background:#F6F1E6;padding:36px 36px 8px;">
+    <div style="font-family:'DM Sans',Arial,Helvetica,sans-serif;font-weight:500;font-size:11px;line-height:16px;letter-spacing:2px;text-transform:uppercase;color:#9C5518;">This week</div>
+    <h1 class="h1" style="margin:10px 0 16px;font-family:'Bricolage Grotesque','DM Sans',Arial,Helvetica,sans-serif;font-weight:800;font-size:36px;line-height:39px;letter-spacing:-1px;color:#10241D;">{{headline}}</h1>
+    <p style="margin:0 0 8px;font-family:'DM Sans',Arial,Helvetica,sans-serif;font-size:17px;line-height:27px;color:#10241D;">{{intro}}</p>
+  </td></tr>
+
+  <!-- ============ MORTGAGE RATES ============ -->
+  <tr><td class="pad" bgcolor="#F6F1E6" style="background:#F6F1E6;padding:20px 36px 8px;">
+    <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" bgcolor="#10241D" style="background:#10241D;border-radius:16px;">
+      <tr><td style="padding:26px 28px 6px;">
+        <div style="font-family:'DM Sans',Arial,Helvetica,sans-serif;font-weight:500;font-size:11px;line-height:16px;letter-spacing:2px;text-transform:uppercase;color:#D98B4A;">Mortgage rates · U.S. weekly average</div>
+      </td></tr>
+      <tr><td style="padding:0 28px;">
+        <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0"><tr>
+          <td class="col" width="55%" valign="top" style="padding:8px 0 12px;">
+            <div class="big" style="font-family:'DM Sans',Arial,Helvetica,sans-serif;font-weight:700;font-size:52px;line-height:54px;letter-spacing:-1.5px;color:#EDE6D6;">{{rate30}}</div>
+            <div style="font-family:'DM Sans',Arial,Helvetica,sans-serif;font-size:14px;line-height:21px;color:#C9C8B8;">30-year fixed<br>{{rate30_wk}}<br>{{rate30_yr}}</div>
+          </td>
+          <td class="col" width="45%" valign="top" style="padding:8px 0 12px;">
+            <div style="font-family:'DM Sans',Arial,Helvetica,sans-serif;font-weight:700;font-size:30px;line-height:54px;letter-spacing:-0.6px;color:#EDE6D6;">{{rate15}}</div>
+            <div style="font-family:'DM Sans',Arial,Helvetica,sans-serif;font-size:14px;line-height:21px;color:#C9C8B8;">15-year fixed<br>{{rate15_wk}}<br>{{rate15_yr}}</div>
+          </td>
+        </tr></table>
+      </td></tr>
+      <tr><td style="padding:6px 28px 24px;">
+        <div style="border-top:1px solid #2B463B;padding-top:14px;font-family:'DM Sans',Arial,Helvetica,sans-serif;font-size:15px;line-height:23px;color:#EDE6D6;"><strong style="color:#D98B4A;">What this means:</strong> {{rate_meaning}}</div>
+        <div style="padding-top:10px;font-family:'DM Sans',Arial,Helvetica,sans-serif;font-size:12px;line-height:18px;color:#A9B3A6;">Source: <a href="{{rate_url}}" style="color:#D98B4A;">Freddie Mac Primary Mortgage Market Survey</a>, week of {{rate_date}}. A national average, not a rate quote. I'm not a lender. Ask a licensed loan officer about your own rate.</div>
+      </td></tr>
+    </table>
+  </td></tr>
+
+  <!-- ============ LOCAL NUMBERS ============ -->
+  <tr><td class="pad" bgcolor="#F6F1E6" style="background:#F6F1E6;padding:30px 36px 0;">
+    <div style="font-family:'DM Sans',Arial,Helvetica,sans-serif;font-weight:500;font-size:11px;line-height:16px;letter-spacing:2px;text-transform:uppercase;color:#9C5518;">Local numbers · {{local_period}}</div>
+    <h2 style="margin:8px 0 6px;font-family:'Bricolage Grotesque','DM Sans',Arial,Helvetica,sans-serif;font-weight:800;font-size:26px;line-height:30px;letter-spacing:-0.6px;color:#10241D;">What homes are doing near you</h2>
+    <p style="margin:0;font-family:'DM Sans',Arial,Helvetica,sans-serif;font-size:14px;line-height:22px;color:#4A5A50;">▲ means the number went up. ▼ means it went down. Neither one is "good" or "bad" by itself. It depends on whether you're buying or selling.</p>
+    {{placeholder_banner}}
+  </td></tr>
+
+  <!--[counties]-->
+  <tr><td class="pad" bgcolor="#F6F1E6" style="background:#F6F1E6;padding:22px 36px 0;">
+    <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0">
+      <tr><td style="border-top:2px solid #10241D;padding:12px 0 4px;font-family:'Bricolage Grotesque','DM Sans',Arial,Helvetica,sans-serif;font-weight:800;font-size:21px;line-height:26px;letter-spacing:-0.4px;color:#10241D;">{{name}}</td></tr>
+      <tr><td style="padding:0 0 10px;font-family:'DM Sans',Arial,Helvetica,sans-serif;font-size:15px;line-height:23px;color:#10241D;">{{takeaway}}</td></tr>
+    </table>
+    <!--[rows]-->
+    <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0"><tr>
+      <!--[tiles]-->
+      <td class="col" width="{{cellw}}" valign="top" style="padding:{{cellpad}};">
+        <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" bgcolor="#FFFFFF" style="border-collapse:separate;background:#FFFFFF;border:1px solid #CFC5AD;border-radius:12px;">
+          <tr><td style="padding:14px 16px 14px;">
+            <div style="font-family:'DM Sans',Arial,Helvetica,sans-serif;font-size:13px;line-height:18px;color:#4A5A50;">{{label}}</div>
+            <div style="font-family:'DM Sans',Arial,Helvetica,sans-serif;font-weight:700;font-size:28px;line-height:34px;letter-spacing:-0.6px;color:#10241D;">{{value}}</div>
+            <div style="font-family:'DM Sans',Arial,Helvetica,sans-serif;font-size:12px;line-height:18px;color:#4A5A50;">{{delta_mom}}<br>{{delta_yoy}}</div>
+            <div style="margin-top:8px;border-top:1px solid #EDE6D6;padding-top:8px;font-family:'DM Sans',Arial,Helvetica,sans-serif;font-size:13px;line-height:19px;color:#10241D;">{{meaning}}</div>
+          </td></tr>
+        </table>
+      </td>
+      <!--[/tiles]-->
+    </tr></table>
+    <!--[/rows]-->
+    <!--[missing_note]-->
+    <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td style="border:1px dashed #9C5518;border-radius:10px;padding:10px 14px;font-family:'DM Sans',Arial,Helvetica,sans-serif;font-size:13px;line-height:19px;color:#10241D;"><strong>Draft note (remove before sending):</strong> still needed from MetroList: {{missing_list}}. No number was made up.</td></tr></table>
+    <!--[/missing_note]-->
+    <!--[meter]-->
+    <!-- months-of-inventory scale: one hue, light to dark; the marker shows where this county sits -->
+    <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="margin-top:6px;">
+      <tr><td style="padding:8px 0 4px;font-family:'DM Sans',Arial,Helvetica,sans-serif;font-size:13px;line-height:18px;color:#4A5A50;">Who has the edge? Months of homes for sale: <strong style="color:#10241D;">{{moi}}</strong></td></tr>
+      <tr><td>
+        <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0"><tr>
+          <td width="{{pct}}%" style="font-size:1px;line-height:1px;">&nbsp;</td>
+          <td style="font-family:Arial,Helvetica,sans-serif;font-size:13px;line-height:13px;color:#10241D;">▼</td>
+        </tr></table>
+      </td></tr>
+      <tr><td>
+        <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0"><tr>
+          <td width="37%" align="center" bgcolor="#EADFC6" style="background:#EADFC6;border-radius:6px 0 0 6px;padding:7px 2px;font-family:'DM Sans',Arial,Helvetica,sans-serif;font-size:12px;line-height:16px;color:#10241D;">Sellers' edge<span class="hide-sm"> · under 3</span></td>
+          <td width="1%" style="font-size:1px;">&nbsp;</td>
+          <td width="37%" align="center" bgcolor="#D3C39C" style="background:#D3C39C;padding:7px 2px;font-family:'DM Sans',Arial,Helvetica,sans-serif;font-size:12px;line-height:16px;color:#10241D;">Balanced<span class="hide-sm"> · 3 to 6</span></td>
+          <td width="1%" style="font-size:1px;">&nbsp;</td>
+          <td width="24%" align="center" bgcolor="#B9A473" style="background:#B9A473;border-radius:0 6px 6px 0;padding:7px 2px;font-family:'DM Sans',Arial,Helvetica,sans-serif;font-size:12px;line-height:16px;color:#10241D;">Buyers' edge<span class="hide-sm"> · 6+</span></td>
+        </tr></table>
+      </td></tr>
+    </table>
+    <!--[/meter]-->
+  </td></tr>
+  <!--[/counties]-->
+
+  <tr><td class="pad" bgcolor="#F6F1E6" style="background:#F6F1E6;padding:18px 36px 0;">
+    <p style="margin:0;font-family:'DM Sans',Arial,Helvetica,sans-serif;font-size:12px;line-height:18px;color:#4A5A50;">{{attribution}} The "edge" scale is a common rule of thumb, not a hard line.</p>
+  </td></tr>
+
+  <!-- ============ WORTH YOUR TIME ============ -->
+  <tr><td class="pad" bgcolor="#F6F1E6" style="background:#F6F1E6;padding:34px 36px 0;">
+    <div style="font-family:'DM Sans',Arial,Helvetica,sans-serif;font-weight:500;font-size:11px;line-height:16px;letter-spacing:2px;text-transform:uppercase;color:#9C5518;">Worth your time</div>
+    <h2 style="margin:8px 0 4px;font-family:'Bricolage Grotesque','DM Sans',Arial,Helvetica,sans-serif;font-weight:800;font-size:26px;line-height:30px;letter-spacing:-0.6px;color:#10241D;">I read it so you don't have to</h2>
+  </td></tr>
+  <!--[links]-->
+  <tr><td class="pad" bgcolor="#F6F1E6" style="background:#F6F1E6;padding:14px 36px 0;">
+    <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0"><tr>
+      <td width="4" bgcolor="#D98B4A" style="background:#D98B4A;font-size:1px;">&nbsp;</td>
+      <td bgcolor="#EDE6D6" style="background:#EDE6D6;padding:16px 18px;border-radius:0 12px 12px 0;">
+        <div style="font-family:'DM Sans',Arial,Helvetica,sans-serif;font-size:12px;line-height:18px;color:#4A5A50;">{{source}} · {{published}}</div>
+        <div style="padding:2px 0 6px;font-family:'DM Sans',Arial,Helvetica,sans-serif;font-weight:700;font-size:17px;line-height:23px;color:#10241D;">{{title}}</div>
+        <div style="font-family:'DM Sans',Arial,Helvetica,sans-serif;font-size:15px;line-height:23px;color:#10241D;">{{take}}</div>
+        <div style="padding-top:8px;font-family:'DM Sans',Arial,Helvetica,sans-serif;font-weight:700;font-size:14px;line-height:20px;"><a href="{{url}}" style="color:#9C5518;">Read it at the source →</a></div>
+      </td>
+    </tr></table>
+  </td></tr>
+  <!--[/links]-->
+
+  <!-- ============ TIP ============ -->
+  <tr><td class="pad" bgcolor="#F6F1E6" style="background:#F6F1E6;padding:34px 36px 0;">
+    <div style="font-family:'DM Sans',Arial,Helvetica,sans-serif;font-weight:500;font-size:11px;line-height:16px;letter-spacing:2px;text-transform:uppercase;color:#9C5518;">Good to know</div>
+    <h2 style="margin:8px 0 8px;font-family:'Bricolage Grotesque','DM Sans',Arial,Helvetica,sans-serif;font-weight:800;font-size:24px;line-height:28px;letter-spacing:-0.5px;color:#10241D;">{{tip_title}}</h2>
+    <p style="margin:0;font-family:'DM Sans',Arial,Helvetica,sans-serif;font-size:16px;line-height:25px;color:#10241D;">{{tip_text}} <a href="{{tip_url}}" style="color:#9C5518;font-weight:700;">{{tip_link_text}}</a></p>
+  </td></tr>
+
+  <!-- ============ ONE CTA ============ -->
+  <tr><td class="pad" bgcolor="#F6F1E6" style="background:#F6F1E6;padding:34px 36px 40px;">
+    <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" bgcolor="#EDE6D6" style="background:#EDE6D6;border-radius:16px;"><tr><td align="center" style="padding:26px 24px;">
+      <p style="margin:0 0 16px;font-family:'DM Sans',Arial,Helvetica,sans-serif;font-size:16px;line-height:25px;color:#10241D;">{{cta_text}}</p>
+      <table role="presentation" cellpadding="0" cellspacing="0" border="0"><tr><td bgcolor="#D98B4A" style="background:#D98B4A;border-radius:99px;">
+        <a href="{{cta_url}}" style="display:inline-block;padding:14px 28px;font-family:'DM Sans',Arial,Helvetica,sans-serif;font-weight:700;font-size:15px;line-height:20px;color:#10241D;text-decoration:none;">{{cta_button}}</a>
+      </td></tr></table>
+    </td></tr></table>
+  </td></tr>
+
+  <!-- ============ FOOTER (CAN-SPAM + DRE) ============ -->
+  <tr><td class="pad" bgcolor="#0B1A15" style="background:#0B1A15;padding:30px 36px 34px;border-radius:0 0 18px 18px;font-family:'DM Sans',Arial,Helvetica,sans-serif;font-size:12px;line-height:20px;color:#A9B3A6;">
+    <div style="color:#EDE6D6;font-weight:700;font-size:13px;">Felicia Nevin · California Real Estate Salesperson · CA DRE #01961050</div>
+    eXp Realty of California, Inc. · CA DRE #01878277<br>
+    2603 Camino Ramon, Suite 200, San Ramon, CA 94583<br>
+    <span style="color:#EDE6D6;">Equal Housing Opportunity</span><br><br>
+    Opinions are my own and not the views of eXp Realty. This email is general information, not legal, tax, lending, or financial advice. Market numbers are a look back at what already happened. They are not a prediction. Data is deemed reliable but not guaranteed.<br><br>
+    You're getting this because you signed up at <a href="https://felicianevin.com/" style="color:#D98B4A;">felicianevin.com</a>. Every issue is also posted at <a href="{{page_url}}" style="color:#D98B4A;">felicianevin.com/market</a>.<br>
+    <a href="{unsubscribe_url}" style="color:#D98B4A;">Unsubscribe</a> anytime with one click.
+  </td></tr>
+
+</table>
+
+</td></tr>
+</table>
+</body>
+</html>
