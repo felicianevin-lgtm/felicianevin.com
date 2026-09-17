@@ -1,0 +1,4 @@
+Photos from Pexels (free to use under the Pexels License, no attribution required; credited here for our records).
+hero-folsom-rainbow-bridge.jpg  - Rainbow Bridge on Lake Natoma, Folsom - https://www.pexels.com/photo/19206721/
+sacramento-skyline-river.jpg    - Sacramento skyline from the river - https://www.pexels.com/photo/the-sacramento-skyline-14112274/ (cropped)
+Both are real, unaltered photos of the region (cropped and darkened by CSS overlay only).

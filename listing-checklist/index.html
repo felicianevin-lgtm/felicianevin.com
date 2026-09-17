@@ -1,0 +1,421 @@
+<title>Listing Checklist · Felicia Nevin</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,500&family=Montserrat:wght@400;500&family=Jost:wght@300;400;500&display=swap">
+<style>
+  :root {
+    --ink: #23211E; --paper: #FBF8F3; --gold: #B08D4F; --gold-soft: #D9C08A;
+    --muted: #6E6862; --hairline: #E7DFD1; --band: #23211E; --card: #FFFFFF;
+  }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; }
+  body { background: var(--paper); color: var(--ink); font-family: 'Jost', 'Segoe UI', sans-serif; font-weight: 300; }
+
+  .band { background: var(--band); color: #fff; padding: 2.6rem 1.5rem 2.3rem; text-align: center; }
+  .band .eyebrow { font-family: 'Montserrat', sans-serif; font-weight: 500; font-size: 0.7rem; letter-spacing: 0.38em; text-indent: 0.38em; color: var(--gold-soft); }
+  .band h1 { font-family: 'Cormorant Garamond', Georgia, serif; font-weight: 500; font-size: clamp(2.2rem, 5vw, 3rem); letter-spacing: 0.03em; margin: 0.5rem 0 0; }
+  .band .sub { font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 1rem; color: #CFC7B8; margin-top: 0.6rem; }
+  .band .prop { font-family: 'Montserrat', sans-serif; font-size: 0.72rem; letter-spacing: 0.2em; color: var(--gold-soft); margin-top: 0.9rem; min-height: 1em; text-transform: uppercase; }
+
+  .wrap { max-width: 46rem; margin: 0 auto; padding: 0 1.25rem 4rem; }
+
+  .toolbar { position: sticky; top: 0; z-index: 6; background: var(--paper); display: flex; gap: 0.5rem; align-items: center; padding: 0.9rem 0 0.7rem; border-bottom: 1px solid var(--hairline); flex-wrap: wrap; }
+  .toolbar .chip { font-family: 'Montserrat', sans-serif; font-size: 0.62rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--muted); text-decoration: none; border: 1px solid var(--hairline); border-radius: 999px; padding: 0.35rem 0.75rem; background: #fff; }
+  .toolbar .chip:hover { border-color: var(--gold); color: var(--gold); }
+  .toolbar .grow { flex: 1; }
+  .toolbar button { font-family: 'Montserrat', sans-serif; font-size: 0.62rem; letter-spacing: 0.14em; text-transform: uppercase; color: #fff; background: var(--band); border: none; border-radius: 999px; padding: 0.42rem 0.85rem; cursor: pointer; }
+  .toolbar button:hover { background: #2a261f; }
+  .saved { font-family: 'Montserrat', sans-serif; font-size: 0.58rem; letter-spacing: 0.12em; color: #A79E8E; text-transform: uppercase; }
+
+  .phase { margin-top: 2.4rem; }
+  .phase-head { display: flex; align-items: baseline; gap: 0.9rem; }
+  .phase-num { font-family: 'Cormorant Garamond', serif; font-size: 2rem; color: var(--gold); line-height: 1; }
+  .phase-head h2 { font-family: 'Cormorant Garamond', serif; font-weight: 500; font-size: 1.55rem; margin: 0; }
+  .phase-note { font-size: 0.9rem; color: var(--muted); margin: 0.45rem 0 0 2.55rem; line-height: 1.55; }
+  .phase-note b { font-weight: 500; color: var(--ink); }
+
+  details.sec { background: var(--card); border: 1px solid var(--hairline); border-radius: 3px; margin-top: 0.9rem; }
+  details.sec summary { list-style: none; cursor: pointer; display: flex; align-items: center; gap: 0.7rem; padding: 0.85rem 1.1rem; font-family: 'Montserrat', sans-serif; font-weight: 500; font-size: 0.74rem; letter-spacing: 0.22em; text-transform: uppercase; color: var(--ink); }
+  details.sec summary::-webkit-details-marker { display: none; }
+  details.sec summary::before { content: '+'; font-family: 'Cormorant Garamond', serif; font-size: 1.25rem; color: var(--gold); width: 0.9rem; line-height: 1; }
+  details.sec[open] summary::before { content: '–'; }
+  details.sec summary .mls { margin-left: auto; }
+  .sec-body { padding: 0.2rem 1.15rem 1.15rem; border-top: 1px solid var(--hairline); }
+
+  .mls { font-family: 'Montserrat', sans-serif; font-size: 0.52rem; letter-spacing: 0.14em; color: var(--gold); border: 1px solid var(--gold-soft); border-radius: 2px; padding: 0.12rem 0.35rem; white-space: nowrap; }
+
+  .row { display: flex; flex-wrap: wrap; gap: 0.5rem 1.4rem; align-items: baseline; margin-top: 0.85rem; }
+  .f { display: flex; flex-direction: column; gap: 0.3rem; flex: 1; min-width: 11rem; }
+  .f.sm { flex: 0 1 8.5rem; min-width: 7rem; }
+  .f.full { flex-basis: 100%; }
+  .f label { font-family: 'Montserrat', sans-serif; font-size: 0.6rem; letter-spacing: 0.16em; text-transform: uppercase; color: var(--muted); display: flex; gap: 0.45rem; align-items: baseline; }
+  .f input[type=text], .f textarea { font-family: 'Jost', sans-serif; font-weight: 300; font-size: 0.95rem; color: var(--ink); background: #FDFCF9; border: 1px solid var(--hairline); border-radius: 2px; padding: 0.45rem 0.6rem; outline: none; width: 100%; }
+  .f input:focus, .f textarea:focus { border-color: var(--gold); }
+  .f textarea { min-height: 3.4rem; resize: vertical; }
+
+  .opts { display: flex; flex-wrap: wrap; gap: 0.4rem; }
+  .opt { font-family: 'Jost', sans-serif; font-weight: 400; font-size: 0.8rem; color: var(--muted); background: #fff; border: 1px solid var(--hairline); border-radius: 999px; padding: 0.25rem 0.7rem; cursor: pointer; user-select: none; }
+  .opt.on { background: var(--band); border-color: var(--band); color: #fff; }
+
+  .task { display: flex; gap: 0.7rem; align-items: flex-start; margin-top: 0.7rem; cursor: pointer; }
+  .task .box { flex: none; width: 1rem; height: 1rem; border: 1px solid var(--gold); border-radius: 2px; margin-top: 0.12rem; display: grid; place-items: center; font-size: 0.72rem; color: #fff; }
+  .task.on .box { background: var(--gold); }
+  .task.on .box::after { content: '✓'; }
+  .task .t { font-size: 0.95rem; line-height: 1.5; }
+  .task.on .t { color: #A79E8E; text-decoration: line-through; text-decoration-color: var(--gold-soft); }
+
+  .sg { display: grid; grid-template-columns: 1fr auto; gap: 0.35rem 1rem; align-items: center; margin-top: 0.6rem; }
+  .sg .nm { font-size: 0.92rem; }
+
+  .hint { font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 0.95rem; color: var(--muted); margin-top: 0.7rem; line-height: 1.5; }
+  .hint.warn { color: #8a5a3c; }
+
+  @media print {
+    .toolbar, .band .prop { display: none; }
+    details.sec { break-inside: avoid; }
+    body { background: #fff; }
+  }
+
+  .foot { margin-top:2.5rem; border-top:1px solid var(--hairline); padding-top:1.4rem; text-align:center; }
+  .foot .agent { font-family:'Montserrat',sans-serif; font-weight:500; font-size:.78rem; letter-spacing:.3em; text-indent:.3em; text-transform:uppercase; }
+  .foot .title { font-family:'Montserrat',sans-serif; font-size:.58rem; letter-spacing:.3em; text-indent:.3em; text-transform:uppercase; color:var(--gold); margin-top:.4rem; }
+  .foot .contact { font-size:.82rem; color:var(--muted); margin-top:.55rem; }
+
+  .foot .contact a { color:var(--muted); text-decoration:none; }
+  .foot .contact a:hover { color:var(--gold); }
+
+  .socials { display:flex; gap:1.1rem; justify-content:center; margin-top:.8rem; }
+  .socials a { color:var(--muted); }
+  .socials a:hover { color:var(--gold); }
+  .socials svg { width:20px; height:20px; display:block; }
+</style>
+
+<header class="band">
+  <div class="eyebrow">FELICIA NEVIN &middot; SACRAMENTO &middot; PLACER &middot; EL DORADO</div>
+  <h1>Listing Checklist</h1>
+  <div class="sub">From first conversation to on-market &mdash; one page, four steps.</div>
+  <div class="prop" id="propline"></div>
+</header>
+
+<div class="wrap">
+  <nav class="toolbar">
+    <a class="chip" href="#p1">1 · Seller Homework</a>
+    <a class="chip" href="#p2">2 · Appointment</a>
+    <a class="chip" href="#p3">3 · If It Applies</a>
+    <a class="chip" href="#p4">4 · Launch</a>
+    <span class="grow"></span>
+    <span class="saved" id="savestate">saves automatically on this device</span>
+    <button id="newbtn" type="button">New listing</button>
+  </nav>
+  <main id="app"></main>
+  <footer class="foot">
+  <div class="agent">Felicia Nevin</div>
+  <div class="title">REALTOR&reg; &middot; Sacramento &middot; Placer &middot; El Dorado</div>
+  <div class="contact"><a href="tel:9167928670">916.792.8670</a> &middot; <a href="mailto:felicia@felicianevin.com">felicia@felicianevin.com</a> &middot; <a href="https://felicianevin.com" target="_blank" rel="noopener">felicianevin.com</a></div>
+  <div class="socials">
+    <a href="https://www.linkedin.com/in/felicianevinsellshomes/" target="_blank" rel="noopener" aria-label="LinkedIn"><svg viewBox="0 0 24 24"><rect x="2.5" y="2.5" width="19" height="19" rx="3" fill="none" stroke="currentColor" stroke-width="1.8"/><circle cx="7.2" cy="7.4" r="1.4" fill="currentColor"/><rect x="6.1" y="10" width="2.2" height="7.6" fill="currentColor"/><path fill="currentColor" d="M10.6 10h2.1v1.05a2.5 2.5 0 0 1 2.2-1.15c1.9 0 2.9 1.15 2.9 3.3v4.4h-2.2v-4c0-1.1-.4-1.75-1.35-1.75-.8 0-1.25.54-1.45 1.06-.08.19-.1.45-.1.71v3.98h-2.1z"/></svg></a>
+  </div>
+  <div class="contact" style="font-size:.7rem;margin-top:.5rem;">DRE # 01961050 &middot; eXp Realty of California &middot; Broker DRE # 01878277</div>
+</footer>
+</div>
+
+<script>
+// ---------- content ----------
+const YN = ["Yes", "No"];
+const D = [
+  { phase: 1, title: "Before the Appointment — Seller Homework", note: "Everything here can be answered by the seller before you arrive — send them <b>forms.felicianevin.com/pre-listing</b> and the meeting starts a mile ahead." },
+  { sec: "Contact & Property", open: true, items: [
+    ["t", "Property address", "addr", "full"],
+    ["t", "Seller name(s)", "sellers"], ["t", "Seller phone", "phone", "sm"], ["ch", "Text OK?", "textok", YN],
+    ["t", "Email(s)", "emails", "full"],
+  ]},
+  ["Seller Story & Motivation", [
+    ["ta", "What improvements have you made?", "improvements", "full"],
+    ["ta", "Favorite features / least favorite?", "favorites", "full"],
+    ["ta", "Why did you decide to buy this home?", "whybought", "full"],
+    ["t", "WHERE are you moving?", "where"], ["ch", "Need an agent referral there?", "referral", YN],
+    ["t", "WHY are you moving?", "why", "full"],
+    ["t", "By what date would you like the home sold?", "solddate"],
+    ["ta", "What's important about moving, to you?", "important", "full"],
+    ["t", "When did you last sell a home?", "lastsold"],
+    ["ta", "What did you like / dislike about that process?", "likeddisliked", "full"],
+    ["ta", "What qualities are you looking for in a REALTOR®?", "qualities", "full"],
+  ]],
+  ["What Stays / What Goes", [
+    ["sgset", ["Washer","Dryer","Fridge","Range / Oven","Spa","Fountain","Mounted TVs & brackets","Window coverings","Shed / Playset","Potted plants"]],
+    ["hint", "Anything marked Goes or Negotiable that shows in photos belongs on the Do-Not-Market list (step 2) — and personal-property inclusions get written into the RPA."],
+  ]],
+  ["Systems & Ages", [
+    ["t", "HVAC age", "hvac", "sm"], ["t", "Roof age", "roof", "sm"], ["t", "Water heater age", "whage", "sm"],
+    ["ch", "Water heater strapped", "strapped", YN], ["ch", "Tankless", "tankless", YN],
+    ["ch", "Well", "well", YN], ["t", "Well last inspected", "wellinsp", "sm"],
+    ["ch", "Septic", "septic", YN], ["t", "Septic last pumped", "septicpump", "sm"],
+    ["ch", "Propane", "propane", YN], ["ch", "Propane tank", "propown", ["Leased", "Owned"]], ["t", "Propane company", "propco"],
+    ["t", "Internet provider", "internet"], ["t", "Insurance provider", "insurance"],
+    ["ch", "Smoke detectors present & compliant", "smoke", YN], ["ch", "CO detectors", "co", YN],
+  ]],
+  ["Solar & Leased Equipment", [
+    ["ch", "Solar", "solar", YN], ["ch", "Solar is", "solarown", ["Leased", "Owned"]], ["t", "Lease payment $/mo", "solarpay", "sm"], ["t", "Solar company", "solarco"],
+    ["ch", "Other leased / financed equipment (softener, propane tank, alarm)", "otherleased", YN],
+    ["t", "Item / company / owned-leased", "otherleasednotes", "full"],
+    ["hint", "Leased solar or equipment? Get the contract — step 3 has the follow-through."],
+  ]],
+  ["Cameras & Recording", [
+    ["ch", "Active cameras / video doorbell / audio recording", "cams", YN],
+    ["t", "Locations", "camloc", "full"],
+    ["ch", "Cameras stay with the house?", "camstay", ["Stay", "Go"]],
+  ]],
+  ["HOA / Association", "mls", [
+    ["ch", "Is there an HOA / association?", "hoa", YN],
+    ["t", "Dues $", "hoadues", "sm"], ["ch", "Frequency", "hoafreq", ["Monthly","Quarterly","Semi-Annual","Annually"]], ["ch", "Mandatory", "hoamand", YN],
+    ["mch", "Dues cover", "hoacovers", ["Common areas","Pool","Trash","Water","Sewer","Insurance","Ext. maint.","Grounds","Management","Security","Roof","Road","Cable/Internet"]],
+    ["t", "Association name", "hoaname"], ["t", "Assoc. phone / management co.", "hoamgmt"],
+    ["t", "Amenities (clubhouse, gym, tennis, trails, gate…)", "hoaamen", "full"],
+    ["ch", "Current special assessment or litigation?", "hoalit", ["Yes","No","Unknown"]],
+    ["t", "HOA notes", "hoanotes", "full"],
+  ]],
+  ["Living & Showings (Seller Side)", [
+    ["ch", "Occupancy", "occ", ["Owner","Tenant","Vacant"], "mls"],
+    ["ch", "Pets on the property", "pets", YN], ["t", "Type & names", "petnames"],
+    ["t", "Plan for pets during showings (crated, removed, yard…)", "petplan", "full"],
+    ["ch", "Notice needed to get out of the house", "notice", ["None","1 hr","2 hr","4 hr","24 hr"]],
+    ["t", "Restricted hours / days", "restricted"],
+    ["ta", "Availability / access notes for vendors (photographer, stager, sign, inspector)", "vendoraccess", "full"],
+  ]],
+
+  { phase: 2, title: "At the Appointment", note: "Your working read of the seller, the numbers, and everything MLS will ask for. Fields tagged <span class='mls'>MLS&nbsp;R</span> are required to go live." },
+  ["First Read & Value", [
+    ["ch", "DISC read", "disc", ["D","I","S","C"]],
+    ["t", "Listing agent suggested value $", "suggested", "sm"],
+    ["t", "Seller feels the home is worth $", "sellerfeel", "sm"],
+  ]],
+  ["Ownership & Signing Authority", [
+    ["ch", "How is title held", "title", ["Individual(s)","Trust","LLC / Corp","Estate / Probate","Conservatorship","Other"]],
+    ["ta", "Full LEGAL name(s) of ALL signers, exactly as on title", "signers", "full"],
+    ["ch", "Any signer deceased / unavailable?", "deceased", YN], ["t", "Explain", "deceasedexp"],
+    ["ch", "Power of Attorney being used?", "poa", YN], ["t", "Who holds it", "poawho"],
+    ["hint", "Trust, probate, short sale, POA, LLC, or tenant? Open step 3 — each has its own two-minute block."],
+  ]],
+  ["Pricing Perception", [
+    ["t", "Realtor.com $", "est_realtor", "sm"], ["t", "Redfin $", "est_redfin", "sm"], ["t", "Zillow $", "est_zillow", "sm"], ["t", "Homes.com $", "est_homes", "sm"],
+    ["t", "RVM $", "est_rvm", "sm"], ["t", "RVM stars", "est_rvmstars", "sm"], ["t", "Fello $", "est_fello", "sm"], ["t", "OpenDoor offer $", "est_opendoor", "sm"],
+    ["t", "Average $", "est_avg", "sm"], ["t", "Possible rental $/mo", "est_rent", "sm"],
+  ]],
+  ["Do-Not-Market List", [
+    ["ta", "Items visible in photos that will NOT stay — keep out of photos, remarks & feature lists", "donotmarket", "full"],
+  ]],
+  ["ShowingTime & Access", "mls", [
+    ["t", "Contact 1 name", "st1"], ["t", "Contact 1 cell", "st1cell", "sm"],
+    ["t", "Contact 2 name (optional)", "st2"], ["t", "Contact 2 cell", "st2cell", "sm"],
+    ["ch", "Approval type", "approval", ["Go-and-show (notify only)","Appointment required"]],
+    ["ch", "Alarm", "alarm", YN], ["ch", "Alarm on between showings?", "alarmon", YN], ["t", "Alarm code (in person only)", "alarmcode", "sm"],
+    ["t", "Gate code (in person only)", "gatecode", "sm"], ["t", "Lockbox location", "lockbox"],
+    ["mch", "MLS Showing Instructions (pick at least 1)", "showinst", ["24 Hr Notice","Appointment Only","Call 1st Lockbox","Text Showing Contact","Go Directly","Vacant w/ Lockbox","Do Not Disturb","Pets–See Remarks","Surveillance Equip. in Use","Restricted Hours","Supra iBox","No Photos Allowed"]],
+    ["c", "Cameras present → selected “Surveillance Equipment in Use” in MLS", "task_mls_surv"],
+    ["c", "Advised seller about recording during showings", "task_advise_rec"],
+  ]],
+  ["Price & Contract Terms", "mls", [
+    ["t", "List price $", "listprice", "sm"], ["t", "Listing date", "listdate", "sm"], ["t", "Expiration", "expdate", "sm"],
+    ["ch", "Possession", "possession", ["Close of Escrow","Negotiable","Seller rent back","Subject to tenant rights"]], ["t", "Rent-back days", "rentbackdays", "sm"],
+    ["ch", "Loans / liens that affect sale (incl. PACE/HERO)?", "liens", YN], ["t", "Lien notes", "liennotes"],
+    ["ch", "Bonds / assessments / Mello-Roos", "melloroos", ["Yes","No","Unknown"]], ["t", "Which", "melloroosnotes"],
+  ]],
+  ["Marketing Notes", [
+    ["ta", "Seller's 3 favorite things about the home (→ public remarks)", "fav3", "full"],
+    ["ta", "Upgrades / improvements + year done", "upgrades", "full"],
+    ["ta", "Neighborhood / location perks (schools, commute, views)", "perks", "full"],
+    ["ta", "Do NOT advertise (Do-Not-Market list, privacy, Fair Housing)", "noadvertise", "full"],
+    ["ta", "Private agent-to-agent remarks (offer instructions, quirks, timing — 1,300 char)", "privremarks", "full"],
+  ]],
+
+  { phase: 3, title: "Only If It Applies", note: "Skip what doesn't apply — these stay closed unless the situation calls for them." },
+  ["Trust", "closed", [
+    ["t", "Trust name & date (exactly as titled)", "trustname", "full"],
+    ["t", "Trustee(s) authorized to sign", "trustees", "full"],
+    ["c", "Requested copy of the Trust (or Certification of Trust) — needed to verify signing authority before going live", "task_trustcert"],
+  ]],
+  ["Probate", "closed", [
+    ["ch", "Court confirmation required?", "probate", YN],
+    ["t", "Attorney name / phone", "probatty", "full"],
+    ["t", "Authority docs, deadlines, PR contacts", "probnotes", "full"],
+  ]],
+  ["Short Sale", "closed", [
+    ["ch", "Lender(s) identified & seller aware of process?", "ssaware", YN],
+    ["t", "Lender(s)", "sslenders", "full"],
+  ]],
+  ["POA / LLC / Corporation", "closed", [
+    ["c", "Got a copy of the recorded POA", "task_poa"],
+    ["c", "Got operating agreement / corp resolution showing who signs", "task_corp"],
+  ]],
+  ["Tenant-Occupied", "closed", [
+    ["t", "Tenant name / phone / lease end / rent", "tenant", "full"],
+  ]],
+  ["Leased Solar / Equipment", "closed", [
+    ["c", "Got the solar lease / PPA contract — lease assumption affects the escrow timeline", "task_solarlease"],
+    ["c", "Got contracts for other leased equipment", "task_otherlease"],
+  ]],
+
+  { phase: 4, title: "Launch", note: "The last mile — dates on the calendar and the sign in the yard." },
+  ["Launch Logistics", [
+    ["t", "Staging consult date", "stagedate", "sm"], ["t", "Photo date", "photodate", "sm"], ["t", "On-market date", "livedate", "sm"],
+    ["ch", "Open house?", "openhouse", YN], ["c", "Sign installed", "task_sign"],
+    ["hint", "Photo prep: send the seller the Prep-for-Photos checklist the week before the shoot."],
+  ]],
+];
+
+// ---------- render ----------
+const app = document.getElementById('app');
+let phaseEl = null, phaseCount = 0;
+function el(tag, cls, html) { const e = document.createElement(tag); if (cls) e.className = cls; if (html !== undefined) e.innerHTML = html; return e; }
+
+for (const entry of D) {
+  if (!Array.isArray(entry) && entry.phase) {
+    phaseCount++;
+    phaseEl = el('section', 'phase'); phaseEl.id = 'p' + entry.phase;
+    const head = el('div', 'phase-head');
+    head.appendChild(el('span', 'phase-num', String(entry.phase)));
+    head.appendChild(el('h2', '', entry.title));
+    phaseEl.appendChild(head);
+    phaseEl.appendChild(el('p', 'phase-note', entry.note));
+    app.appendChild(phaseEl);
+    continue;
+  }
+  let title, flags = [], items;
+  if (!Array.isArray(entry)) { title = entry.sec; items = entry.items; }
+  else { title = entry[0]; items = entry[entry.length - 1]; flags = entry.slice(1, -1); }
+  const sec = el('details', 'sec');
+  if (!flags.includes('closed')) sec.open = true;
+  const sum = el('summary', '', title);
+  if (flags.includes('mls')) sum.appendChild(el('span', 'mls', 'MLS R'));
+  sec.appendChild(sum);
+  const body = el('div', 'sec-body');
+  let row = null;
+  const newRow = () => { row = el('div', 'row'); body.appendChild(row); return row; };
+  for (const it of items) {
+    const [kind] = it;
+    if (kind === 't' || kind === 'ta') {
+      const [, label, key, size] = it;
+      if (!row || size === 'full') newRow();
+      const f = el('div', 'f' + (size ? ' ' + size : ''));
+      f.appendChild(el('label', '', label));
+      const inp = document.createElement(kind === 'ta' ? 'textarea' : 'input');
+      if (kind === 't') inp.type = 'text';
+      inp.dataset.k = key;
+      f.appendChild(inp);
+      row.appendChild(f);
+      if (size === 'full') row = null;
+    } else if (kind === 'ch' || kind === 'mch') {
+      const [, label, key, options, tag] = it;
+      if (!row) newRow();
+      const f = el('div', 'f');
+      const lab = el('label', '', label);
+      if (tag === 'mls') lab.appendChild(el('span', 'mls', 'MLS R'));
+      f.appendChild(lab);
+      const opts = el('div', 'opts');
+      opts.dataset.k = key; opts.dataset.multi = kind === 'mch' ? '1' : '';
+      for (const o of options) { const b = el('span', 'opt', o); b.dataset.v = o; opts.appendChild(b); }
+      f.appendChild(opts);
+      row.appendChild(f);
+      if (kind === 'mch') row = null;
+    } else if (kind === 'c') {
+      const [, label, key] = it;
+      row = null;
+      const t = el('div', 'task');
+      t.dataset.k = key;
+      t.appendChild(el('span', 'box'));
+      t.appendChild(el('span', 't', label));
+      body.appendChild(t);
+    } else if (kind === 'sgset') {
+      row = null;
+      const grid = el('div', 'sg');
+      for (const nm of it[1]) {
+        grid.appendChild(el('span', 'nm', nm));
+        const opts = el('div', 'opts');
+        opts.dataset.k = 'sg_' + nm.toLowerCase().replace(/[^a-z]+/g, '');
+        for (const o of ['Stays', 'Goes', 'Negotiable']) { const b = el('span', 'opt', o); b.dataset.v = o; opts.appendChild(b); }
+        grid.appendChild(opts);
+      }
+      body.appendChild(grid);
+    } else if (kind === 'hint') {
+      row = null;
+      body.appendChild(el('p', 'hint', it[1]));
+    }
+  }
+  sec.appendChild(body);
+  phaseEl.appendChild(sec);
+}
+
+// ---------- persistence (localStorage, this device only) ----------
+const KEY = 'll-listing-checklist';
+let LS;
+try { LS = window.localStorage; LS.getItem(KEY); } catch (e) { LS = null; }
+const store = JSON.parse((LS && LS.getItem(KEY)) || '{}');
+const save = () => { if (LS) { LS.setItem(KEY, JSON.stringify(store)); flash(); } };
+if (!LS) document.getElementById('savestate').textContent = 'fill & print — saving unavailable in this view';
+let flashTimer;
+function flash() {
+  const s = document.getElementById('savestate');
+  s.textContent = 'saved';
+  clearTimeout(flashTimer);
+  flashTimer = setTimeout(() => s.textContent = 'saves automatically on this device', 1200);
+}
+function propline() {
+  document.getElementById('propline').textContent = store.addr || '';
+}
+document.querySelectorAll('input[data-k], textarea[data-k]').forEach(inp => {
+  if (store[inp.dataset.k]) inp.value = store[inp.dataset.k];
+  inp.addEventListener('input', () => { store[inp.dataset.k] = inp.value; save(); if (inp.dataset.k === 'addr') propline(); });
+});
+document.querySelectorAll('.opts[data-k]').forEach(g => {
+  const k = g.dataset.k, multi = g.dataset.multi;
+  const cur = store[k] || (multi ? [] : '');
+  g.querySelectorAll('.opt').forEach(b => {
+    if (multi ? cur.includes(b.dataset.v) : cur === b.dataset.v) b.classList.add('on');
+    b.addEventListener('click', () => {
+      if (multi) {
+        b.classList.toggle('on');
+        store[k] = [...g.querySelectorAll('.opt.on')].map(x => x.dataset.v);
+      } else {
+        const was = b.classList.contains('on');
+        g.querySelectorAll('.opt').forEach(x => x.classList.remove('on'));
+        if (!was) b.classList.add('on');
+        store[k] = was ? '' : b.dataset.v;
+      }
+      save();
+    });
+  });
+});
+document.querySelectorAll('.task[data-k]').forEach(t => {
+  if (store[t.dataset.k]) t.classList.add('on');
+  t.addEventListener('click', () => { t.classList.toggle('on'); store[t.dataset.k] = t.classList.contains('on'); save(); });
+});
+propline();
+
+// homework branching — Yes tucks the seller-homework sections away
+const p1 = document.getElementById('p1');
+const ctl = el('div', 'sec');
+ctl.innerHTML = '<div class="sec-body" style="border-top:none">' +
+  '<div class="f"><label class="t">Did the seller complete the Pre-Listing Questionnaire (their homework)?</label>' +
+  '<span class="opts" id="hwopts"><span class="opt" data-v="Yes">Yes — skip this step</span><span class="opt" data-v="No">No — go through it together</span></span></div>' +
+  '<p class="hint" id="hwnote" style="display:none">Their answers are waiting in the <a href="#SETUP-YOUR-OWN-FORM" target="_blank" rel="noopener" style="color:var(--gold)">questionnaire responses</a> — the sections below are tucked away. Jump to step 2.</p>' +
+  '</div>';
+p1.insertBefore(ctl, p1.children[2]);
+function applyHW() {
+  const v = store['homework'] || '';
+  const hide = v === 'Yes';
+  [...p1.querySelectorAll('details.sec')].forEach(s => { s.style.display = hide ? 'none' : ''; });
+  document.getElementById('hwnote').style.display = hide ? 'block' : 'none';
+  [...document.querySelectorAll('#hwopts .opt')].forEach(b => b.classList.toggle('on', b.dataset.v === v));
+}
+document.querySelectorAll('#hwopts .opt').forEach(b => b.addEventListener('click', () => {
+  store['homework'] = store['homework'] === b.dataset.v ? '' : b.dataset.v;
+  save(); applyHW();
+}));
+applyHW();
+
+document.getElementById('newbtn').addEventListener('click', () => {
+  if (confirm('Clear everything and start a new listing? This wipes all saved answers on this device.')) {
+    if (LS) LS.removeItem(KEY);
+    location.reload();
+  }
+});
+</script>

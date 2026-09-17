@@ -1,0 +1,22 @@
+# AI assistants and search engines are welcome here.
+User-agent: GPTBot
+User-agent: OAI-SearchBot
+User-agent: ChatGPT-User
+User-agent: ClaudeBot
+User-agent: Claude-SearchBot
+User-agent: Claude-User
+User-agent: PerplexityBot
+User-agent: Google-Extended
+User-agent: Applebot-Extended
+User-agent: CCBot
+Allow: /
+Disallow: /hub/
+Disallow: /listing-checklist/
+
+User-agent: *
+Disallow: /hub/
+Disallow: /listing-checklist/
+Disallow: /backend/
+Disallow: /_build/
+
+Sitemap: https://felicianevin.com/sitemap.xml
