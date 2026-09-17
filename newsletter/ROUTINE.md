@@ -5,6 +5,8 @@ description: Draft Felicia Nevin's OWN weekly market email (felicianevin.com) - 
 
 # Felicia's weekly market email - draft routine
 
+**The weekly clock (Pacific time):** Wed 6:00pm draft run (this skill) -> Thu ~9:00am Freddie Mac posts the new rate -> Thu 9:30am rate refresh + QA re-run -> Felicia reads + approves -> **Thu 12:00pm send** (she schedules it in BoldTrail) -> site page + BoldTrail blog + social cuts Thu afternoon.
+
 **What this is:** Alex Dyer's note-card method, for Felicia's own business. Note card + reliable sources in, one issue out in five shapes (HTML email, plain text, site page, BoldTrail blog body, social cuts).
 
 **HARD STOPS (read first):**
@@ -28,6 +30,7 @@ description: Draft Felicia Nevin's OWN weekly market email (felicianevin.com) - 
 3. **Pick 2 to 3 links** from what was gathered. Only items published in the last ~10 days (monthly reports: the newest one). Every link needs `url`, `published`, `verified_on`, and a 2-sentence `take`.
 4. **Write `newsletter/issues/<date>.json`** - copy the shape of the newest file in `newsletter/issues/`. `"status": "draft"` always. You never set "approved".
 5. **Build.** `python newsletter/build_issue.py <date> --copy-to "G:\My Drive\REAL ESTATE SYSTEMS\Felicia Nevin - Own Business\Newsletter"`. Read `CHECKS.txt`. Fix every MUST FIX and every wording flag that is a real problem, rebuild ONCE.
+5b. **QA.** `python newsletter/gather.py <date> <each release URL used>` (so every cited page is saved), then `python newsletter/qa_issue.py <date>`. Every number must be found on its own source page and every compliance line must PASS. The only allowed FAIL in a draft is "a licensed human approved" (that is Felicia's job). Fix anything else and re-run ONCE. Copy `QA-REPORT.txt` + `QA-REPORT.html` to the Drive folder.
 6. **Hand off.** Write `<Drive>\<date>\READY FOR REVIEW.txt`: what's in the issue, every source with URL + publish date, anything skipped and why, anything she must check by eye (rate number if stale, any big or surprising figure), and her Thursday steps (below). Then stop. Do NOT run `--publish`.
 
 ## Writing rules (all of them, every issue)

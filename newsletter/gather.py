@@ -56,7 +56,7 @@ def main():
     for key, who, url, hint in jobs:
         try:
             text = to_text(fetch(url))
-            (out / (key + ".txt")).write_text("SOURCE: %s\nURL: %s\nFETCHED: %s\nLOOK FOR: %s\n\n%s\n" % (who, url, datetime.now().isoformat(timespec="minutes"), hint, text[:60000]), encoding="utf-8")
+            (out / (key + ".txt")).write_text("SOURCE: %s\nURL: %s\nFETCHED: %s\nLOOK FOR: %s\n\n%s\n" % (who, url, datetime.now().isoformat(timespec="minutes"), hint, text[:250000]), encoding="utf-8")
             index.append("OK    %-20s %s" % (key, url))
         except Exception as e:  # one try only; a miss is recorded, never retried
             index.append("SKIP  %-20s %s  (%s)" % (key, url, str(e)[:80]))

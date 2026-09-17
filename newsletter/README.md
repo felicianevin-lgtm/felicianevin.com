@@ -9,6 +9,7 @@ Felicia's own newsletter, built the note-card way: one issue file in, five outpu
 | `issues/<date>.json` | One issue: her take, numbers, links with URL + publish date, tip, CTA. `status` is `draft` until she approves. |
 | `gather.py` | Saves a dated text snapshot of each source page. One try each, no loops. |
 | `build_issue.py` | Builds `out/<date>/`: `email.html`, `email.txt`, `blog-boldtrail.html`, `page-preview.html`, `social.md`, `CHECKS.txt`. `--publish` (approved issues only) writes `/market/<date>/`, the `/market/` index and the sitemap. |
+| `qa_issue.py` | Accuracy + compliance QA: every number must be on its saved source page, every link must load, and the built email is checked against CAN-SPAM, DRE disclosure, Fair Housing, NAR Art. 12, attribution and copyright rules. Writes `QA-REPORT`. |
 | `guide/` | "How to read your market numbers" (her PDF cheat sheet, source HTML). |
 | `ROUTINE.md` | The weekly routine (copy of the `felicia-newsletter` skill). |
 
