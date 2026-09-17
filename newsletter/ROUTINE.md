@@ -5,7 +5,7 @@ description: Draft Felicia Nevin's OWN weekly market email (felicianevin.com) - 
 
 # Felicia's weekly market email - draft routine
 
-**The weekly clock (Pacific time):** Wed 6:00pm draft run (this skill) -> Thu ~9:00am Freddie Mac posts the new rate -> Thu 9:30am rate refresh + QA re-run -> Felicia reads + approves -> **Thu 12:00pm send** (she schedules it in BoldTrail) -> site page + BoldTrail blog + social cuts Thu afternoon.
+**The weekly clock (Pacific time):** Wed 6:00pm draft run (this skill) -> Thu ~9:00am Freddie Mac posts the new rate -> Thu 9:30am rate refresh + QA re-run -> Felicia reads + approves Thursday -> she schedules it in BoldTrail (Marketing -> Scheduled Mass Emails) for **FRIDAY 9:30am Pacific / 12:30pm Eastern** -> site page + BoldTrail blog + social cuts Friday. Why Friday: BoldTrail's scheduler needs about 24 hours of lead time, so a same-day Thursday send cannot carry Thursday's rate. SHE picks the recipient hashtag and clicks Schedule herself, always (the hashtag dropdown mis-selects under automation); Claude may load the HTML into the message box (tinymce setContent) and reads back the '# of Contacts' number.
 
 **What this is:** Alex Dyer's note-card method, for Felicia's own business. Note card + reliable sources in, one issue out in five shapes (HTML email, plain text, site page, BoldTrail blog body, social cuts).
 
@@ -52,7 +52,7 @@ description: Draft Felicia Nevin's OWN weekly market email (felicianevin.com) - 
 1. Open `email.html` from the Drive folder in Chrome. Read it top to bottom. Open `CHECKS.txt`.
 2. After ~9am PT, check the Freddie Mac number at freddiemac.com/pmms. Tell Claude "update the rate" if it changed.
 3. Tell Claude what to change, or say "approved". Only then: Claude sets `"status": "approved"`, runs `--publish`, shows her the site page, and she OKs the commit + push.
-4. BoldTrail -> Marketing -> mass email -> recipients = hashtag `#newsletter` -> paste `email.html` in HTML/source view -> send herself a test -> send. (She clicks send. Nobody else.)
+4. BoldTrail -> Marketing -> Scheduled Mass Emails -> + Schedule Email -> SHE picks hashtag `#newsletter` and checks the chip -> date = Friday, time = 12:30 pm (ET) -> ask Claude to "load this week's email" into the message box (never copy from the Chrome view of the file; that loses all formatting) -> SHE clicks Schedule -> check '# of Contacts'.
 5. BoldTrail blog: new post, paste `blog-boldtrail.html` in source view.
 6. Post the cuts in `social.md` (Facebook, Instagram, LinkedIn, Google Business Profile) after the site page is live.
 7. New subscribers: Leads sheet rows with `newsletter` = yes -> add to BoldTrail with hashtag `#newsletter`.
