@@ -57,9 +57,10 @@ def main():
         return m.group(1).rstrip("/") if m else ""
 
     def find(forms, only_url=None):
+        only_url = only_url.split("?")[0] if only_url else only_url
         """Look for the number on the page it is supposed to come from (only_url), else on any saved page."""
         for name, body in sources.items():
-            if only_url and url_of(body) != only_url.rstrip("/"):
+            if only_url and url_of(body).split("?")[0] != only_url.rstrip("/"):
                 continue
             for f in forms:
                 if re.search(r"(?<![\d.,])" + re.escape(f) + r"(?![\d])", body):
@@ -78,7 +79,7 @@ def main():
             m = c["metrics"].get(key) or {}
             for which in ("value", "prev_month", "prev_year"):
                 if m.get(which) is not None:
-                    src = issue["local"].get("source_url")
+                    src = m.get("source_url") or issue["local"].get("source_url")
                     if not src:  # MLS numbers live behind her login; they cannot be re-checked by script
                         add("Accuracy", "%s, %s (%s) = %s" % (c["name"], label, which, number_forms(m[which], kind)[0]), True, "from the note card: compare with TrendVision on screen", eye=True)
                         continue
@@ -148,7 +149,7 @@ def main():
                 continue  # allowed: inside an association's name
             if m.group(0) == "—":
                 continue  # style only, not compliance
-            if re.search(r"not guaranteed", ctx, re.I):
+            if re.search(r"not guaranteed|does not guarantee", ctx, re.I):
                 continue  # the required "deemed reliable but not guaranteed" disclaimer
             hits.append("\"%s\" (%s) ...%s..." % (m.group(0), why.split(";")[0].split(":")[0], re.sub(r"\s+", " ", ctx).strip()))
     add("Fair Housing / NAR Art. 12 / no predictions / no rate advice", "No flagged wording in the body (%d patterns scanned)" % len(LINT), not hits, " | ".join(hits)[:600])

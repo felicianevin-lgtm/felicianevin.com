@@ -103,6 +103,8 @@ def fmt_delta(kind, now, prev, versus):
     else:
         unit = {"days": " days", "months": " mo", "pct": " pts"}[kind]
         text = "{:g}{}".format(round(abs(diff), 1), unit)
+        if round(abs(diff), 1) == 1:
+            text = text.replace(" days", " day").replace(" pts", " pt")
         flat = abs(diff) < 0.05
     if flat:
         return "● no change vs. " + versus
@@ -133,6 +135,7 @@ def build_counties(local, final):
             if m.get("value") is None:
                 missing.append(label)
                 continue
+            label = m.get("label") or label  # e.g. MetroList reports AVERAGE days, not median
             tiles.append({"label": esc(label), "value": fmt_value(kind, m["value"]),
                           "delta_mom": fmt_delta(kind, m["value"], m.get("prev_month"), "last month"),
                           "delta_yoy": fmt_delta(kind, m["value"], m.get("prev_year"), "last year"),
