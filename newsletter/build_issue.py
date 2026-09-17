@@ -239,7 +239,7 @@ def context(issue, final):
                   'font-size:13px;line-height:19px;"><strong style="color:#D98B4A;">SAMPLE NUMBERS.</strong> These are placeholders, not real market data. Do not send.</div>')
     return {
         "subject": esc(issue["subject"]), "preheader": esc(issue["preheader"]),
-        "newsletter_name": esc(issue.get("newsletter_name", "Weekly market email")),
+        "newsletter_name": esc(issue.get("newsletter_name", "The Market Report")),
         "date_long": long_date(issue["date"]), "headline": esc(issue["headline"]),
         "intro": " ".join(md_inline(s) for s in issue["intro"]),
         "rate30": "{:.2f}%".format(r["rate30"]), "rate15": "{:.2f}%".format(r["rate15"]),
@@ -378,7 +378,7 @@ PAGE = """<!doctype html>
 SIGNUP = """<section class="dark" id="newsletter">
   <div class="wrap why">
     <div>
-      <span class="eyebrow">Weekly market email</span>
+      <span class="eyebrow">The Market Report · weekly email</span>
       <h2>Get this in your inbox once a week.</h2>
       <p style="color:var(--cream)">Local numbers, mortgage rates, and the few stories worth your time. Plain language. Unsubscribe with one click.</p>
     </div>
