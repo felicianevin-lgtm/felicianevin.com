@@ -4,3 +4,6 @@ __pycache__/
 Thumbs.db
 _src_photos/
 .claude/
+
+# newsletter drafts never go to the live site
+newsletter/out/

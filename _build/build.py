@@ -91,6 +91,11 @@ for src in sorted((ROOT / "_build" / "pages").glob("*.html")):
         urls.append(meta["path"])
     print("built", meta["path"])
 
+# market updates are stamped by newsletter/build_issue.py --publish
+if (ROOT / "market" / "index.html").exists():
+    urls.append("/market/")
+    urls += ["/market/%s/" % d.parent.name for d in sorted((ROOT / "market").glob("*/index.html"), reverse=True)]
+
 sitemap = ['<?xml version="1.0" encoding="UTF-8"?>', '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">']
 sitemap += ["  <url><loc>https://felicianevin.com%s</loc></url>" % u for u in urls]
 sitemap.append("</urlset>")

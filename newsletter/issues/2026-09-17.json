@@ -1,0 +1,212 @@
+{
+  "date": "2026-09-17",
+  "issue_no": 1,
+  "status": "draft",
+  "newsletter_name": "The Market Report",
+  "subject": "Rates jumped this week. Here's what local homes did.",
+  "preheader": "Mortgage rates rose to 6.95%, the Fed raised its rate, and August home prices held steady in Sacramento, Placer, and El Dorado counties.",
+  "headline": "Rates jumped. Local prices held steady.",
+  "intro": [
+    "The average 30-year mortgage rate rose to 6.95% this week, one day after the Federal Reserve raised its own rate.",
+    "Here at home, August prices barely moved from a year ago in all three counties, and more homes went under contract than last August.",
+    "Below is what each number means in plain language, and where to read more."
+  ],
+  "rates": {
+    "survey_date": "2026-09-17",
+    "rate30": 6.95,
+    "rate30_prev": 6.76,
+    "rate30_year": 6.26,
+    "rate15": 6.26,
+    "rate15_prev": 6.09,
+    "rate15_year": 5.41,
+    "source_url": "https://www.freddiemac.com/pmms",
+    "verified_on": "2026-09-17",
+    "meaning": "A higher rate means a higher monthly payment on the same loan. On a $400,000 loan, the move from 6.76% to 6.95% adds about $50 a month (principal and interest only). Your own rate depends on your credit, down payment, and loan type."
+  },
+  "local": {
+    "period": "August 2026",
+    "placeholder": false,
+    "source_url": "https://www.car.org/en/aboutus/mediacenter/newsreleases/2026releases/august2026sales",
+    "verified_on": "2026-09-17",
+    "attribution": "Median sold price: CALIFORNIA ASSOCIATION OF REALTORS® August 2026 report, published September 16, 2026, existing single-family homes. All other local numbers: MetroList® MLS via TrendVision, single-family homes, August 1 to 31, 2026, pulled September 17, 2026, compared with July 2026 and August 2025. Based on information from MetroList Services, Inc., which does not guarantee and is not responsible for its accuracy. Data may not reflect all real estate activity in the market. Deemed reliable but not guaranteed.",
+    "counties": [
+      {
+        "name": "Sacramento County",
+        "takeaway": "Prices are almost exactly where they were a year ago. More homes went under contract than last August. With about 2.4 months of homes for sale, the market still leans toward sellers.",
+        "metrics": {
+          "median_price": {
+            "value": 549000,
+            "prev_month": 540000,
+            "prev_year": 550000,
+            "source_url": "https://www.car.org/en/aboutus/mediacenter/newsreleases/2026releases/august2026sales"
+          },
+          "new_listings": {
+            "value": 1375,
+            "prev_month": 1592,
+            "prev_year": 1318,
+            "source_url": "https://www.gotrendvision.com/Member/FtReport.aspx"
+          },
+          "pendings": {
+            "value": 1062,
+            "prev_month": 1021,
+            "prev_year": 922,
+            "source_url": "https://www.gotrendvision.com/Member/FtReport.aspx"
+          },
+          "days_on_market": {
+            "value": 37,
+            "prev_month": 38,
+            "prev_year": 39,
+            "source_url": "https://www.gotrendvision.com/Member/FtReport.aspx",
+            "label": "Average days on market",
+            "meaning": "On average, a sold home was on the market about 37 days. That counts any earlier listing of the same home."
+          },
+          "months_inventory": {
+            "value": 2.4,
+            "prev_month": 2.3,
+            "prev_year": 2.5,
+            "source_url": "https://www.gotrendvision.com/Member/FtReport.aspx"
+          },
+          "sale_to_list": {
+            "value": 98,
+            "prev_month": 98,
+            "prev_year": 97,
+            "source_url": "https://www.gotrendvision.com/Member/FtReport.aspx",
+            "label": "Sold price vs. first asking price",
+            "meaning": "On average, sellers got about 98% of their first asking price, before any price cuts."
+          }
+        }
+      },
+      {
+        "name": "Placer County",
+        "takeaway": "Prices are up a little from last year. Homes took longer to sell than in July, about 48 days on average, and sellers got about 96% of their first asking price.",
+        "metrics": {
+          "median_price": {
+            "value": 692500,
+            "prev_month": 689000,
+            "prev_year": 675000,
+            "source_url": "https://www.car.org/en/aboutus/mediacenter/newsreleases/2026releases/august2026sales"
+          },
+          "new_listings": {
+            "value": 564,
+            "prev_month": 662,
+            "prev_year": 561,
+            "source_url": "https://www.gotrendvision.com/Member/FtReport.aspx"
+          },
+          "pendings": {
+            "value": 452,
+            "prev_month": 445,
+            "prev_year": 449,
+            "source_url": "https://www.gotrendvision.com/Member/FtReport.aspx"
+          },
+          "days_on_market": {
+            "value": 48,
+            "prev_month": 39,
+            "prev_year": 50,
+            "source_url": "https://www.gotrendvision.com/Member/FtReport.aspx",
+            "label": "Average days on market",
+            "meaning": "On average, a sold home was on the market about 48 days. That counts any earlier listing of the same home."
+          },
+          "months_inventory": {
+            "value": 2.9,
+            "prev_month": 2.4,
+            "prev_year": 3.0,
+            "source_url": "https://www.gotrendvision.com/Member/FtReport.aspx"
+          },
+          "sale_to_list": {
+            "value": 96,
+            "prev_month": 97,
+            "prev_year": 96,
+            "source_url": "https://www.gotrendvision.com/Member/FtReport.aspx",
+            "label": "Sold price vs. first asking price",
+            "meaning": "On average, sellers got about 96% of their first asking price, before any price cuts."
+          }
+        }
+      },
+      {
+        "name": "El Dorado County",
+        "takeaway": "The median dropped from July, but it is still above last August. Fewer homes sell here each month, so one month can swing the number a lot. With 4.4 months of homes for sale, buyers here have the most room of the three counties.",
+        "metrics": {
+          "median_price": {
+            "value": 690000,
+            "prev_month": 735000,
+            "prev_year": 679500,
+            "meaning": "Half sold for more, half for less. A smaller county, so the monthly number jumps around more.",
+            "source_url": "https://www.car.org/en/aboutus/mediacenter/newsreleases/2026releases/august2026sales"
+          },
+          "new_listings": {
+            "value": 261,
+            "prev_month": 314,
+            "prev_year": 265,
+            "source_url": "https://www.gotrendvision.com/Member/FtReport.aspx"
+          },
+          "pendings": {
+            "value": 202,
+            "prev_month": 171,
+            "prev_year": 194,
+            "source_url": "https://www.gotrendvision.com/Member/FtReport.aspx"
+          },
+          "days_on_market": {
+            "value": 60,
+            "prev_month": 57,
+            "prev_year": 56,
+            "source_url": "https://www.gotrendvision.com/Member/FtReport.aspx",
+            "label": "Average days on market",
+            "meaning": "On average, a sold home was on the market about 60 days. That counts any earlier listing of the same home."
+          },
+          "months_inventory": {
+            "value": 4.4,
+            "prev_month": 3.6,
+            "prev_year": 4.3,
+            "source_url": "https://www.gotrendvision.com/Member/FtReport.aspx"
+          },
+          "sale_to_list": {
+            "value": 96,
+            "prev_month": 96,
+            "prev_year": 94,
+            "source_url": "https://www.gotrendvision.com/Member/FtReport.aspx",
+            "label": "Sold price vs. first asking price",
+            "meaning": "On average, sellers got about 96% of their first asking price, before any price cuts."
+          }
+        }
+      }
+    ]
+  },
+  "links": [
+    {
+      "source": "Federal Reserve",
+      "title": "The Fed raised its interest rate by a quarter point",
+      "url": "https://www.federalreserve.gov/newsevents/pressreleases/monetary20260916a.htm",
+      "published": "2026-09-16",
+      "verified_on": "2026-09-17",
+      "take": "The Fed moved its target range up to 3.75% to 4%. The Fed does not set mortgage rates. But its moves change what it costs banks to borrow, and mortgage rates often react."
+    },
+    {
+      "source": "CALIFORNIA ASSOCIATION OF REALTORS®",
+      "title": "California home sales and prices for August",
+      "url": "https://www.car.org/en/aboutus/mediacenter/newsreleases/2026releases/august2026sales",
+      "published": "2026-09-16",
+      "verified_on": "2026-09-17",
+      "take": "Statewide, the median price was $901,420, almost flat from a year ago, and the typical home sold in 28 days. Their page has a county table near the bottom, so you can see how our three counties compare with the rest of the state."
+    },
+    {
+      "source": "National Association of REALTORS®",
+      "title": "U.S. home sales dipped 2% in August",
+      "url": "https://www.nar.realtor/newsroom/nar-existing-home-sales-report-shows-2-0-decrease-in-august",
+      "published": "2026-09-10",
+      "verified_on": "2026-09-17",
+      "take": "Across the country, sales slowed a little and the median price was $429,100. There were 4.9 months of homes for sale, up from 4.6 a year ago, so buyers nationwide have a bit more to pick from."
+    }
+  ],
+  "tip": {
+    "title": "Pre-approved is not the same as pre-qualified",
+    "text": "Pre-qualified means a lender took a quick look at what you told them. Pre-approved means they checked your pay stubs, credit, and bank statements. When rates are moving, a real pre-approval tells you what payment you can count on before you fall for a house.",
+    "url": "/resources/#buying",
+    "link_text": "See the buying guide, step 1"
+  },
+  "cta": {
+    "text": "Have a question about your own home or your own move? Hit reply, or send me a note. It comes straight to me.",
+    "text_web": "Have a question about your own home or your own move? Send me a note. It comes straight to me.",
+    "button": "Ask Felicia a question",
+    "url": "/?intent=Other#start"
+  }
+}
