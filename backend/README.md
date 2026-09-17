@@ -14,6 +14,18 @@ Do this while signed into the **business** Google account (not the personal Gmai
 7. Test: submit the form on the site. You should see (a) a new row in `Leads`, (b) a summary email,
    (c) a new contact in BoldTrail within a few minutes.
 
+## If Extensions → Apps Script shows "Sorry, unable to open the file at this time"
+
+That happens when several Google accounts are signed into the same Chrome profile and the business account
+is not the first one. Workaround (this is how the live backend was set up on 2026-09-17):
+
+1. Open `https://script.google.com/u/N/home/projects/create`, where `N` is the account's position in the
+   account switcher (first account = 0). This makes a standalone script project.
+2. Paste in `Code.gs` and set `var SHEET_ID = '...'` to the Sheet's ID (the long string in the Sheet's URL).
+   Keep the real ID in the editor copy only, not in this repo.
+3. Continue from step 3 above. Google will ask for access to all your spreadsheets (not just this one)
+   because a standalone script opens the Sheet by ID.
+
 ## Routing tab (who gets which lead)
 
 One row per partner agent. A row only fires when `active` is TRUE **and** it has a partner email.

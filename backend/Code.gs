@@ -11,6 +11,11 @@
  * Setup: see backend/README.md. All settings live in the "Settings" tab — no code edits needed.
  */
 
+// Leave '' when the script is bound to the Sheet (Extensions > Apps Script). If it had to be created as a
+// standalone project at script.google.com, paste the Sheet's ID here (the long string in its URL) in the
+// editor copy only. Do not commit the real ID.
+var SHEET_ID = '';
+
 var TABS = { leads: 'Leads', routing: 'Routing', settings: 'Settings' };
 
 var LEAD_COLUMNS = ['timestamp', 'intent', 'area', 'timeframe', 'name', 'email', 'phone', 'sms_consent', 'newsletter',
@@ -19,7 +24,7 @@ var LEAD_COLUMNS = ['timestamp', 'intent', 'area', 'timeframe', 'name', 'email',
 
 /** Run once from the editor: builds the three tabs with headers and sample rows. */
 function setup() {
-  var ss = SpreadsheetApp.getActive();
+  var ss = book();
   var leads = ss.getSheetByName(TABS.leads) || ss.insertSheet(TABS.leads);
   if (leads.getLastRow() === 0) leads.appendRow(LEAD_COLUMNS);
   leads.setFrozenRows(1);
@@ -77,7 +82,7 @@ function doPost(e) {
     lead.status = 'new';
 
     // --- log ---
-    var sheet = SpreadsheetApp.getActive().getSheetByName(TABS.leads);
+    var sheet = book().getSheetByName(TABS.leads);
     sheet.appendRow(LEAD_COLUMNS.map(function (k) { return lead[k]; }));
 
     // --- notify Felicia ---
@@ -120,6 +125,8 @@ function doPost(e) {
 
 /* ---------------- helpers ---------------- */
 
+function book() { return SHEET_ID ? SpreadsheetApp.openById(SHEET_ID) : SpreadsheetApp.getActive(); }
+
 function clean(v) { return String(v == null ? '' : v).replace(/[\r\n]+/g, ' ').trim().slice(0, 1000); }
 
 function json(obj) {
@@ -127,13 +134,13 @@ function json(obj) {
 }
 
 function readSettings() {
-  var rows = SpreadsheetApp.getActive().getSheetByName(TABS.settings).getDataRange().getValues(), out = {};
+  var rows = book().getSheetByName(TABS.settings).getDataRange().getValues(), out = {};
   rows.slice(1).forEach(function (r) { if (r[0]) out[String(r[0]).trim()] = r[1]; });
   return out;
 }
 
 function matchPartners(lead) {
-  var rows = SpreadsheetApp.getActive().getSheetByName(TABS.routing).getDataRange().getValues().slice(1);
+  var rows = book().getSheetByName(TABS.routing).getDataRange().getValues().slice(1);
   var area = (lead.area + ' ' + lead.address).toLowerCase(), out = [];
   rows.forEach(function (r) {
     var active = r[0] === true || String(r[0]).toLowerCase() === 'true';

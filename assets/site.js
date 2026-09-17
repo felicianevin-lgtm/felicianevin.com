@@ -1,7 +1,7 @@
 /* felicianevin.com — shared behavior: headline rotator, scroll reveal, mobile menu, lead forms */
 (function () {
   // Paste the Google Apps Script web app URL here after deploying backend/Code.gs
-  var ENDPOINT = '';
+  var ENDPOINT = 'https://script.google.com/macros/s/AKfycbxcgZOVJZVFRWpZRE_aQkX6pYLrqRjYGlFDQGDGPIN9L9Ohf7BpgSSAR7jsuD43UyR-/exec';
 
   var loadedAt = Date.now();
 
