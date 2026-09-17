@@ -145,6 +145,7 @@ def build_counties(local, final):
             pair = tiles[i:i + 2]
             for j, t in enumerate(pair):
                 t["cellw"] = "50%" if len(pair) == 2 else "100%"
+                t["cellmax"] = "50%" if len(pair) == 2 else "100%"
                 t["cellpad"] = "0 5px 10px 0" if j == 0 and len(pair) == 2 else ("0 0 10px 5px" if j == 1 else "0 0 10px 0")
             rows.append({"tiles": pair})
         # drafts say plainly what is still needed; a published issue just leaves those tiles out
@@ -153,7 +154,7 @@ def build_counties(local, final):
         meter = None
         if moi is not None:
             meter = {"moi": "{:g}".format(moi), "pct": max(0, round(min(moi, 8) / 8 * 100 - 1.5, 1)), "pct_site": round(min(moi, 8) / 8 * 100, 1)}
-        out.append({"name": c["name"], "takeaway": c.get("takeaway", ""), "rows": rows, "tiles_flat": tiles, "meter": meter, "missing_note": note})
+        out.append({"name": c["name"], "takeaway": c.get("takeaway", ""), "rows": rows, "tiles": tiles, "tiles_flat": tiles, "meter": meter, "missing_note": note})
     return out
 
 

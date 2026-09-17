@@ -35,12 +35,12 @@
 <div style="display:none;max-height:0;overflow:hidden;opacity:0;color:#EDE6D6;font-size:1px;line-height:1px;">{{preheader}}</div>
 
 <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" bgcolor="#EDE6D6" style="background:#EDE6D6;">
-<tr><td align="center" style="padding:24px 12px;">
+<tr><td align="center" style="padding:16px 8px;">
 
-<table role="presentation" class="shell" width="600" cellpadding="0" cellspacing="0" border="0" style="width:600px;max-width:600px;">
+<table role="presentation" class="shell" width="100%" cellpadding="0" cellspacing="0" border="0" style="width:100%;max-width:600px;">
 
   <!-- ============ HEADER ============ -->
-  <tr><td class="pad" bgcolor="#10241D" style="background:#10241D;padding:26px 36px;border-radius:18px 18px 0 0;">
+  <tr><td class="pad" bgcolor="#10241D" style="background:#10241D;padding:26px 28px;border-radius:18px 18px 0 0;">
     <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0"><tr>
       <td style="font-family:'Bricolage Grotesque','DM Sans',Arial,Helvetica,sans-serif;font-weight:800;font-size:22px;line-height:24px;color:#EDE6D6;letter-spacing:-0.4px;">
         Felicia Nevin
@@ -53,29 +53,26 @@
   </td></tr>
 
   <!-- ============ THIS WEEK ============ -->
-  <tr><td class="pad" bgcolor="#F6F1E6" style="background:#F6F1E6;padding:36px 36px 8px;">
+  <tr><td class="pad" bgcolor="#F6F1E6" style="background:#F6F1E6;padding:28px 28px 8px;">
     <div style="font-family:'DM Sans',Arial,Helvetica,sans-serif;font-weight:500;font-size:11px;line-height:16px;letter-spacing:2px;text-transform:uppercase;color:#9C5518;">This week</div>
-    <h1 class="h1" style="margin:10px 0 16px;font-family:'Bricolage Grotesque','DM Sans',Arial,Helvetica,sans-serif;font-weight:800;font-size:36px;line-height:39px;letter-spacing:-1px;color:#10241D;">{{headline}}</h1>
+    <h1 class="h1" style="margin:10px 0 16px;font-family:'Bricolage Grotesque','DM Sans',Arial,Helvetica,sans-serif;font-weight:800;font-size:32px;line-height:36px;letter-spacing:-1px;color:#10241D;">{{headline}}</h1>
     <p style="margin:0 0 8px;font-family:'DM Sans',Arial,Helvetica,sans-serif;font-size:17px;line-height:27px;color:#10241D;">{{intro}}</p>
   </td></tr>
 
   <!-- ============ MORTGAGE RATES ============ -->
-  <tr><td class="pad" bgcolor="#F6F1E6" style="background:#F6F1E6;padding:20px 36px 8px;">
+  <tr><td class="pad" bgcolor="#F6F1E6" style="background:#F6F1E6;padding:20px 28px 8px;">
     <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" bgcolor="#10241D" style="background:#10241D;border-radius:16px;">
       <tr><td style="padding:26px 28px 6px;">
         <div style="font-family:'DM Sans',Arial,Helvetica,sans-serif;font-weight:500;font-size:11px;line-height:16px;letter-spacing:2px;text-transform:uppercase;color:#D98B4A;">Mortgage rates · U.S. weekly average</div>
       </td></tr>
       <tr><td style="padding:0 28px;">
-        <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0"><tr>
-          <td class="col" width="55%" valign="top" style="padding:8px 0 12px;">
+        <div style="font-size:0;line-height:0;"><div style="display:inline-block;vertical-align:top;min-width:50%;max-width:100%;width:calc((440px - 100%) * 1000);"><div style="padding:8px 0 12px;">
             <div class="big" style="font-family:'DM Sans',Arial,Helvetica,sans-serif;font-weight:700;font-size:52px;line-height:54px;letter-spacing:-1.5px;color:#EDE6D6;">{{rate30}}</div>
             <div style="font-family:'DM Sans',Arial,Helvetica,sans-serif;font-size:14px;line-height:21px;color:#C9C8B8;">30-year fixed<br>{{rate30_wk}}<br>{{rate30_yr}}</div>
-          </td>
-          <td class="col" width="45%" valign="top" style="padding:8px 0 12px;">
+          </div></div><div style="display:inline-block;vertical-align:top;min-width:50%;max-width:100%;width:calc((440px - 100%) * 1000);"><div style="padding:8px 0 12px;">
             <div style="font-family:'DM Sans',Arial,Helvetica,sans-serif;font-weight:700;font-size:30px;line-height:54px;letter-spacing:-0.6px;color:#EDE6D6;">{{rate15}}</div>
             <div style="font-family:'DM Sans',Arial,Helvetica,sans-serif;font-size:14px;line-height:21px;color:#C9C8B8;">15-year fixed<br>{{rate15_wk}}<br>{{rate15_yr}}</div>
-          </td>
-        </tr></table>
+          </div></div></div>
       </td></tr>
       <tr><td style="padding:6px 28px 24px;">
         <div style="border-top:1px solid #2B463B;padding-top:14px;font-family:'DM Sans',Arial,Helvetica,sans-serif;font-size:15px;line-height:23px;color:#EDE6D6;"><strong style="color:#D98B4A;">What this means:</strong> {{rate_meaning}}</div>
@@ -85,7 +82,7 @@
   </td></tr>
 
   <!-- ============ LOCAL NUMBERS ============ -->
-  <tr><td class="pad" bgcolor="#F6F1E6" style="background:#F6F1E6;padding:30px 36px 0;">
+  <tr><td class="pad" bgcolor="#F6F1E6" style="background:#F6F1E6;padding:30px 28px 0;">
     <div style="font-family:'DM Sans',Arial,Helvetica,sans-serif;font-weight:500;font-size:11px;line-height:16px;letter-spacing:2px;text-transform:uppercase;color:#9C5518;">Local numbers · {{local_period}}</div>
     <h2 style="margin:8px 0 6px;font-family:'Bricolage Grotesque','DM Sans',Arial,Helvetica,sans-serif;font-weight:800;font-size:26px;line-height:30px;letter-spacing:-0.6px;color:#10241D;">What homes are doing near you</h2>
     <p style="margin:0;font-family:'DM Sans',Arial,Helvetica,sans-serif;font-size:14px;line-height:22px;color:#4A5A50;">▲ means the number went up. ▼ means it went down. Neither one is "good" or "bad" by itself. It depends on whether you're buying or selling.</p>
@@ -93,15 +90,16 @@
   </td></tr>
 
   <!--[counties]-->
-  <tr><td class="pad" bgcolor="#F6F1E6" style="background:#F6F1E6;padding:22px 36px 0;">
+  <tr><td class="pad" bgcolor="#F6F1E6" style="background:#F6F1E6;padding:22px 28px 0;">
     <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0">
       <tr><td style="border-top:2px solid #10241D;padding:12px 0 4px;font-family:'Bricolage Grotesque','DM Sans',Arial,Helvetica,sans-serif;font-weight:800;font-size:21px;line-height:26px;letter-spacing:-0.4px;color:#10241D;">{{name}}</td></tr>
       <tr><td style="padding:0 0 10px;font-family:'DM Sans',Arial,Helvetica,sans-serif;font-size:15px;line-height:23px;color:#10241D;">{{takeaway}}</td></tr>
     </table>
-    <!--[rows]-->
-    <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0"><tr>
-      <!--[tiles]-->
-      <td class="col" width="{{cellw}}" valign="top" style="padding:{{cellpad}};">
+    <!-- tiles are inline-block columns: two across at 600px, one across on a phone, no media query needed (the calc() width flips from 50% to 100% under 480px)
+         (BoldTrail's editor strips <style> blocks) -->
+    <div style="font-size:0;line-height:0;text-align:left;margin:0 -5px;">
+      <!--[tiles]--><div style="display:inline-block;vertical-align:top;min-width:{{cellmax}};max-width:100%;width:calc((480px - 100%) * 1000);">
+        <div style="padding:0 5px 10px;">
         <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" bgcolor="#FFFFFF" style="border-collapse:separate;background:#FFFFFF;border:1px solid #CFC5AD;border-radius:12px;">
           <tr><td style="padding:14px 16px 14px;">
             <div style="font-family:'DM Sans',Arial,Helvetica,sans-serif;font-size:13px;line-height:18px;color:#4A5A50;">{{label}}</div>
@@ -110,10 +108,9 @@
             <div style="margin-top:8px;border-top:1px solid #EDE6D6;padding-top:8px;font-family:'DM Sans',Arial,Helvetica,sans-serif;font-size:13px;line-height:19px;color:#10241D;">{{meaning}}</div>
           </td></tr>
         </table>
-      </td>
-      <!--[/tiles]-->
-    </tr></table>
-    <!--[/rows]-->
+        </div>
+      </div><!--[/tiles]-->
+    </div>
     <!--[missing_note]-->
     <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td style="border:1px dashed #9C5518;border-radius:10px;padding:10px 14px;font-family:'DM Sans',Arial,Helvetica,sans-serif;font-size:13px;line-height:19px;color:#10241D;"><strong>Draft note (remove before sending):</strong> still needed from MetroList: {{missing_list}}. No number was made up.</td></tr></table>
     <!--[/missing_note]-->
@@ -141,17 +138,17 @@
   </td></tr>
   <!--[/counties]-->
 
-  <tr><td class="pad" bgcolor="#F6F1E6" style="background:#F6F1E6;padding:18px 36px 0;">
+  <tr><td class="pad" bgcolor="#F6F1E6" style="background:#F6F1E6;padding:18px 28px 0;">
     <p style="margin:0;font-family:'DM Sans',Arial,Helvetica,sans-serif;font-size:12px;line-height:18px;color:#4A5A50;">{{attribution}} The "edge" scale is a common rule of thumb, not a hard line.</p>
   </td></tr>
 
   <!-- ============ WORTH YOUR TIME ============ -->
-  <tr><td class="pad" bgcolor="#F6F1E6" style="background:#F6F1E6;padding:34px 36px 0;">
+  <tr><td class="pad" bgcolor="#F6F1E6" style="background:#F6F1E6;padding:34px 28px 0;">
     <div style="font-family:'DM Sans',Arial,Helvetica,sans-serif;font-weight:500;font-size:11px;line-height:16px;letter-spacing:2px;text-transform:uppercase;color:#9C5518;">Worth your time</div>
     <h2 style="margin:8px 0 4px;font-family:'Bricolage Grotesque','DM Sans',Arial,Helvetica,sans-serif;font-weight:800;font-size:26px;line-height:30px;letter-spacing:-0.6px;color:#10241D;">I read it so you don't have to</h2>
   </td></tr>
   <!--[links]-->
-  <tr><td class="pad" bgcolor="#F6F1E6" style="background:#F6F1E6;padding:14px 36px 0;">
+  <tr><td class="pad" bgcolor="#F6F1E6" style="background:#F6F1E6;padding:14px 28px 0;">
     <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0"><tr>
       <td width="4" bgcolor="#D98B4A" style="background:#D98B4A;font-size:1px;">&nbsp;</td>
       <td bgcolor="#EDE6D6" style="background:#EDE6D6;padding:16px 18px;border-radius:0 12px 12px 0;">
@@ -165,14 +162,14 @@
   <!--[/links]-->
 
   <!-- ============ TIP ============ -->
-  <tr><td class="pad" bgcolor="#F6F1E6" style="background:#F6F1E6;padding:34px 36px 0;">
+  <tr><td class="pad" bgcolor="#F6F1E6" style="background:#F6F1E6;padding:34px 28px 0;">
     <div style="font-family:'DM Sans',Arial,Helvetica,sans-serif;font-weight:500;font-size:11px;line-height:16px;letter-spacing:2px;text-transform:uppercase;color:#9C5518;">Good to know</div>
     <h2 style="margin:8px 0 8px;font-family:'Bricolage Grotesque','DM Sans',Arial,Helvetica,sans-serif;font-weight:800;font-size:24px;line-height:28px;letter-spacing:-0.5px;color:#10241D;">{{tip_title}}</h2>
     <p style="margin:0;font-family:'DM Sans',Arial,Helvetica,sans-serif;font-size:16px;line-height:25px;color:#10241D;">{{tip_text}} <a href="{{tip_url}}" style="color:#9C5518;font-weight:700;">{{tip_link_text}}</a></p>
   </td></tr>
 
   <!-- ============ ONE CTA ============ -->
-  <tr><td class="pad" bgcolor="#F6F1E6" style="background:#F6F1E6;padding:34px 36px 40px;">
+  <tr><td class="pad" bgcolor="#F6F1E6" style="background:#F6F1E6;padding:34px 28px 40px;">
     <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" bgcolor="#EDE6D6" style="background:#EDE6D6;border-radius:16px;"><tr><td align="center" style="padding:26px 24px;">
       <p style="margin:0 0 16px;font-family:'DM Sans',Arial,Helvetica,sans-serif;font-size:16px;line-height:25px;color:#10241D;">{{cta_text}}</p>
       <table role="presentation" cellpadding="0" cellspacing="0" border="0"><tr><td bgcolor="#D98B4A" style="background:#D98B4A;border-radius:99px;">
@@ -182,7 +179,7 @@
   </td></tr>
 
   <!-- ============ FOOTER (CAN-SPAM + DRE) ============ -->
-  <tr><td class="pad" bgcolor="#0B1A15" style="background:#0B1A15;padding:30px 36px 34px;border-radius:0 0 18px 18px;font-family:'DM Sans',Arial,Helvetica,sans-serif;font-size:12px;line-height:20px;color:#A9B3A6;">
+  <tr><td class="pad" bgcolor="#0B1A15" style="background:#0B1A15;padding:30px 28px 34px;border-radius:0 0 18px 18px;font-family:'DM Sans',Arial,Helvetica,sans-serif;font-size:12px;line-height:20px;color:#A9B3A6;">
     <div style="color:#EDE6D6;font-weight:700;font-size:13px;">Felicia Nevin · California Real Estate Salesperson · CA DRE #01961050</div>
     eXp Realty of California, Inc. · CA DRE #01878277<br>
     2603 Camino Ramon, Suite 200, San Ramon, CA 94583<br>
