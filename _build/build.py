@@ -52,7 +52,7 @@ TEMPLATE = """<!doctype html>
 
 {footer}
 {schema}
-<script src="/assets/site.js" defer></script>
+<script src="/assets/site.js?v=20260918" defer></script>
 </body>
 </html>
 """
