@@ -20,7 +20,7 @@ index = (ROOT / "index.html").read_text(encoding="utf-8")
 
 header = re.search(r'<a class="skip".*?</header>', index, re.S).group(0)
 footer = re.search(r"<footer>.*?</footer>", index, re.S).group(0)
-fonts = re.search(r'<link rel="icon".*?site\.css">', index, re.S).group(0)
+fonts = re.search(r'<link rel="icon".*?site\.css[^"]*">', index, re.S).group(0)
 
 # inner pages link back to the homepage form
 header = header.replace('href="#start"', 'href="/#start"')
